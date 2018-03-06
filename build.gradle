@@ -1,0 +1,38 @@
+plugins {
+    id 'groovy'
+    id 'maven-publish'
+    id 'io.spring.bintray' version '0.9.0'
+}
+
+group = 'com.github.helpermethod'
+version = '0.1.0'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+bintray {
+    bintrayUser = System.env.BINTRAY_USER
+    bintrayKey = System.env.BINTRAY_KEY
+    org = System.env.BINTRAY_USER
+    repo = 'maven'
+    publication = 'maven'
+    licenses = ['Apache-2.0']
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy:2.4.13'
+    compile 'org.spockframework:spock-core:1.1-groovy-2.4'
+}
+
+repositories {
+    jcenter()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6'
+}
