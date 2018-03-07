@@ -15,6 +15,6 @@ class ScopeSpec extends Specification {
 
     def 'let should call the specified closure with this as its argument and return its result'() {
         expect:
-        [lang: 'Groovy'].let { it << ['attribute': 'rocks'] } == [lang: 'Groovy', attribute: 'rocks']
+        [lang: 'Groovy'].let { it + [attribute: 'rocks'] } == [lang: 'Groovy', attribute: 'rocks']
     }
 }

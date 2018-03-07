@@ -18,9 +18,9 @@ publishing {
 bintray {
     bintrayUser = System.env.BINTRAY_USER
     bintrayKey = System.env.BINTRAY_KEY
-    org = System.env.BINTRAY_USER
     repo = 'maven'
     publication = 'maven'
+    org = System.env.BINTRAY_USER
     licenses = ['Apache-2.0']
 }
 

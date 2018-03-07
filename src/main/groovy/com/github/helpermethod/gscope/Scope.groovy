@@ -4,9 +4,11 @@ import groovy.transform.CompileStatic
 import groovy.transform.stc.ClosureParams
 import groovy.transform.stc.FirstParam
 
+import static groovy.lang.Closure.DELEGATE_FIRST
+
 @CompileStatic
 class Scope {
-    static <T, U> T apply(T self, @DelegatesTo(type = 'T') Closure<U> block) {
+    static <T, U> T apply(T self, @DelegatesTo(type = 'T', strategy = DELEGATE_FIRST) Closure<U> block) {
         block.delegate = self
         block()
         self
