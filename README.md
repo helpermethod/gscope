@@ -2,12 +2,12 @@
 
 Kotlin's scoping functions ported over to Groovy.
 
-## Features
+## Setup
 
-### API
+```groovy
+```
 
-apply
+## FAQ
 
-also
+### What about `run` and `with`?
 
-let
