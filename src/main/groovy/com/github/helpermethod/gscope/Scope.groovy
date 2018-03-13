@@ -8,18 +8,23 @@ import static groovy.lang.Closure.DELEGATE_FIRST
 
 @CompileStatic
 class Scope {
-    static <T, U> T apply(T self, @DelegatesTo(type = 'T', strategy = DELEGATE_FIRST) Closure<U> block) {
+    static <T, R> T apply(T self, @DelegatesTo(type = 'T', strategy = DELEGATE_FIRST) Closure<R> block) {
         block.delegate = self
         block()
         self
     }
 
-    static <T, U> T also(T self, @ClosureParams(FirstParam) Closure<U> block) {
+    static <T, R> T also(T self, @ClosureParams(FirstParam) Closure<R> block) {
         block self
         self
     }
 
-    static <T, U> U let(T self, @ClosureParams(FirstParam) Closure<U> block) {
+    static <T, R> R let(T self, @ClosureParams(FirstParam) Closure<R> block) {
         block self
+    }
+
+    static <T, R> R run(T self, @DelegatesTo(type = 'T', strategy = DELEGATE_FIRST) Closure<R> block) {
+        block.delegate = self
+        block()
     }
 }

@@ -3,18 +3,23 @@ package com.github.helpermethod.gscope
 import spock.lang.Specification
 
 class ScopeSpec extends Specification {
-    def 'apply should call the specified closure with value as its delegate and return this'() {
+    def 'apply calls the specified closure with this value as its delegate and returns this'() {
         expect:
         [lang: 'Groovy'].apply { put 'attribute', 'rocks' } == [lang: 'Groovy', attribute: 'rocks']
     }
 
-    def 'also should call the specified closure with this as its argument and return this'() {
+    def 'also calls the specified closure with this as its argument and returns this'() {
         expect:
         [lang: 'Groovy'].also { it.put 'attribute', 'rocks' } == [lang: 'Groovy', attribute: 'rocks']
     }
 
-    def 'let should call the specified closure with this as its argument and return its result'() {
+    def 'let calls the specified closure with this as its argument and returns its result'() {
         expect:
-        [lang: 'Groovy'].let { it + [attribute: 'rocks'] } == [lang: 'Groovy', attribute: 'rocks']
+        [lang: 'Groovy'].let { it.size() } == 1
+    }
+
+    def 'run call the specified closure with this value as its delegate and returns its result'() {
+        expect:
+        [lang: 'Groovy'].run { size() } == 1
     }
 }
