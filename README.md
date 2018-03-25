@@ -58,9 +58,57 @@ def ash = new Person().apply {
 
 ### apply
 
-Use apply for post-construction initialisation.
+> `apply` calls the specified closure with `this` value as its delegate and returns `this`.
+
+`apply`'s typical use case is post-construction initialisation.
+
+```groovy
+def ash = new Person().apply {
+    firstName = 'Ash'
+    lastName = 'Williams'
+}
+```
+
+It can be used for exposing a fluent API for methods that would normally return `void`.
+
+```groovy
+class Person {
+    String firstName
+    String lastName
+
+    def firstName(String firstName) {
+        apply { this.firstName = firstName }
+    }
+
+    def lastName(String lastName) {
+        apply { this.lastName = lastName }
+    }
+}
+
+def ash = new Person().firstName('Ash').lastName('Williams')
+```
 
 ### also
+
+> `also` calls the specified closure with `this` as its argument and returns `this`.
+
+`also` is similar to `apply` and only differs in that `this` becomes the closure's argument instead of its delegate.
+Like `apply` it can be used for post-construction initialisation.
+
+```groovy
+def ash = new Person().apply {
+    it.firstName = 'Ash'
+    it.lastName = 'Williams'
+}
+```
+
+`also` may also be used to assign calculated values to fields.
+
+```groovy
+class Person {
+
+}
+```
 
 ### let
 
