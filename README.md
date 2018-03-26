@@ -34,9 +34,9 @@ dependencies {
 </repositories>
 
 <dependency>
-  <groupId>com.github.helpermethod</groupId>
-  <artifactId>gscope</artifactId>
-  <version>0.2.0</version>
+    <groupId>com.github.helpermethod</groupId>
+    <artifactId>gscope</artifactId>
+    <version>0.2.0</version>
 </dependency>
 ```
 
@@ -125,7 +125,7 @@ class Person {
 Use `run` for transforming values.
 
 ```groovy
-def fullName = new Person(firstName: 'Ash', lastName: 'Williams').let {
+def ashWilliams = new Person(firstName: 'Ash', lastName: 'Williams').let {
     "$firstName $lastName"
 }
 ```
@@ -138,7 +138,7 @@ def fullName = new Person(firstName: 'Ash', lastName: 'Williams').let {
 Like `run` you use it for transforming values.
 
 ```groovy
-def fullName = new Person(firstName: 'Ash', lastName: 'Williams').let {
+def ashWilliams = new Person(firstName: 'Ash', lastName: 'Williams').let {
     "$it.firstName $it.lastName"
 }
 ```
