@@ -60,7 +60,7 @@ def ash = new Person().apply {
 
 > `apply` calls the specified closure with `this` value as its delegate and returns `this`.
 
-Use `apply` for post-construction initialisation.
+`apply` is used for post-construction initialisation.
 
 ```groovy
 def ash = new Person().apply {
@@ -69,7 +69,7 @@ def ash = new Person().apply {
 }
 ```
 
-You may also use `apply` when you want to expose a fluent API for methods that would normally return `void`.
+`apply` may also be used to expose a fluent API for methods that would normally return `void`.
 
 ```groovy
 class Person {
@@ -93,7 +93,8 @@ def ash = new Person().firstName('Ash').lastName('Williams')
 > `also` calls the specified closure with `this` as its argument and returns `this`.
 
 `also` is like `apply` except that `this` becomes the closure's argument instead of its delegate.
-Like `apply` you use it for post-construction initialisation.
+
+Like `apply` it's used for initialisation.
 
 ```groovy
 def ash = new Person().apply {
@@ -102,7 +103,7 @@ def ash = new Person().apply {
 }
 ```
 
-You may also use `also` to assign calculated values to fields.
+`also` may also be used to assign calculated values to fields.
 
 ```groovy
 class Person {
@@ -122,7 +123,7 @@ class Person {
 
 > `run` calls the specified closure with `this` value as its delegate and returns its result.
 
-Use `run` for transforming values.
+`run` is used for transforming values.
 
 ```groovy
 def fullName = new Person(firstName: 'Ash', lastName: 'Williams').let {
@@ -135,7 +136,7 @@ def fullName = new Person(firstName: 'Ash', lastName: 'Williams').let {
 > `let` calls the specified closure with `this` as its argument and returns its result.
 
 `let` is like `run` except that `this` becomes the closure's argument instead of its delegate.
-Like `run` you use it for transforming values.
+Like `run` it's used for transforming values.
 
 ```groovy
 def fullName = new Person(firstName: 'Ash', lastName: 'Williams').let {
@@ -143,7 +144,7 @@ def fullName = new Person(firstName: 'Ash', lastName: 'Williams').let {
 }
 ```
 
-You may also use `let` to execute a block of code when the delegate is non-null.
+`let` may also be used to execute a block of code when the delegate is non-null.
 
 ```groovy
 class PersonUtils {
