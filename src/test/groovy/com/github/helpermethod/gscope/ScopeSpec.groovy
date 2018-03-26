@@ -34,9 +34,5 @@ class ScopeSpec extends Specification {
     static class Person {
         String firstName
         String lastName
-
-        def firstName(String firstName) {
-            apply { this.firstName = firstName }
-        }
     }
 }
