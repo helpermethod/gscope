@@ -119,14 +119,14 @@ class Person {
 }
 ```
 
-### use
+### run
 
 > `run` calls the specified closure with `this` value as its delegate and returns its result.
 
 `run` is used for transforming values.
 
 ```groovy
-def ashWilliams = new Person(firstName: 'Ash', lastName: 'Williams').let {
+def ashWilliams = new Person(firstName: 'Ash', lastName: 'Williams').run {
     "$firstName $lastName"
 }
 ```
