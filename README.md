@@ -4,8 +4,8 @@ Kotlin's scoping functions for Groovy.
 
 ## Features
 
-* *Typesafe* GScope is compatible with type checking and static compilation.
-* *Small* GScope has no external dependencies.
+* **Typesafe** GScope is compatible with type checking and static compilation.
+* **Small** GScope has no external dependencies.
 
 ## Setup
 
