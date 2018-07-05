@@ -97,7 +97,7 @@ def ash = new Person().firstName('Ash').lastName('Williams')
 Like `apply` it's used for initialisation.
 
 ```groovy
-def ash = new Person().apply {
+def ash = new Person().also {
     it.firstName = 'Ash'
     it.lastName = 'Williams'
 }
