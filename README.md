@@ -150,7 +150,7 @@ def ashWilliams = new Person(firstName: 'Ash', lastName: 'Williams').let {
 class PersonUtils {
     static def fullName(Person person) {
         person?.let {
-            println it
+            println(it)
             "$it.firstName $it.lastName"
         } ?: 'John Doe'
     }
